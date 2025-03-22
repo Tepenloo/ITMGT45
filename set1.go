@@ -15,8 +15,8 @@ func main() {
 
 // savings
 func savings(grossPay int, taxRate float64, expenses int) int {
-	afterTaxPay := int(math.Floor(float64(grossPay) * (1 - taxRate)))
-	remaining := afterTaxPay - expenses
+	after_tax := int(math.Floor(float64(grossPay) * (1 - taxRate)))
+	remaining := after_tax - expenses
 	if remaining < 0 {
 		return 0
 	}
@@ -34,7 +34,7 @@ func materialWaste(totalMaterial int, materialUnits string, numJobs int, jobCons
 
 // Interest
 func interest(principal int, rate float64, periods int) int {
-	interestEarned := int(math.Floor(float64(principal) * rate * float64(periods)))
-	finalValue := principal + interestEarned
-	return finalValue
+	interest_earned := int(math.Floor(float64(principal) * rate * float64(periods)))
+	investment := principal + interest_earned
+	return investment
 }

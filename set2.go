@@ -52,16 +52,16 @@ func shiftByLetter(letter string, letterShift string) string {
 // vigenereCipher
 func vigenereCipher(message string, key string) string {
 	var result strings.Builder
-	keyIndex := 0
-	keyLen := len(key)
+	key_index := 0
+	key_len := len(key)
 	for _, char := range message {
 		if char == ' ' {
 			result.WriteRune(' ')
 		} else {
-			shift := key[keyIndex%keyLen] - 'A'
+			shift := key[key_index%key_len] - 'A'
 			shifted := 'A' + (char-'A'+rune(shift))%26
 			result.WriteRune(shifted)
-			keyIndex++
+			key_index++
 		}
 	}
 	return result.String()
@@ -77,8 +77,8 @@ func scytaleCipher(message string, shift int) string {
 	columns := length / shift
 	result := make([]byte, length)
 	for i := 0; i < length; i++ {
-		newIndex := (i / columns) + (shift * (i % columns))
-		result[newIndex] = message[i]
+		new_index := (i / columns) + (shift * (i % columns))
+		result[new_index] = message[i]
 	}
 	return string(result)
 }
@@ -89,8 +89,8 @@ func scytaleDecipher(message string, shift int) string {
 	columns := length / shift
 	result := make([]byte, length)
 	for i := 0; i < length; i++ {
-		originalIndex := (i / shift) + (columns * (i % shift))
-		result[originalIndex] = message[i]
+		original_index := (i / shift) + (columns * (i % shift))
+		result[original_index] = message[i]
 	}
 	return string(result)
 }
