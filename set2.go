@@ -8,6 +8,7 @@ import (
 // main
 func main() {
 	// Testing some examples from template
+
 	fmt.Println(shiftLetter("A", 2))                          // "C"
 	fmt.Println(caesarCipher("HELLO WORLD", 3))               // "KHOOR ZRUOG"
 	fmt.Println(shiftByLetter("B", "K"))                      // "L"

@@ -5,7 +5,15 @@ import (
 	"math"
 )
 
-// savings calculates the remaining money after taxes and expenses.
+// main
+func main() {
+	// Test
+	fmt.Println(savings(10000, 0.12, 2000))
+	fmt.Println(materialWaste(1000, "kg", 4, 100))
+	fmt.Println(interest(5500, 0.05, 10))
+}
+
+// savings
 func savings(grossPay int, taxRate float64, expenses int) int {
 	afterTaxPay := int(math.Floor(float64(grossPay) * (1 - taxRate)))
 	remaining := afterTaxPay - expenses
@@ -15,7 +23,7 @@ func savings(grossPay int, taxRate float64, expenses int) int {
 	return remaining
 }
 
-// materialWaste calculates how much material is left after running jobs.
+// Material waste
 func materialWaste(totalMaterial int, materialUnits string, numJobs int, jobConsumption int) string {
 	waste := totalMaterial - (numJobs * jobConsumption)
 	if waste < 0 {
@@ -24,16 +32,9 @@ func materialWaste(totalMaterial int, materialUnits string, numJobs int, jobCons
 	return fmt.Sprintf("%d%s", waste, materialUnits)
 }
 
-// interest calculates the final investment value after simple interest.
+// Interest
 func interest(principal int, rate float64, periods int) int {
 	interestEarned := int(math.Floor(float64(principal) * rate * float64(periods)))
 	finalValue := principal + interestEarned
 	return finalValue
-}
-
-func main() {
-	// Example cases to test functions
-	fmt.Println(savings(100000, 0.12, 20000))     // Example usage
-	fmt.Println(materialWaste(500, "kg", 4, 100)) // Example usage
-	fmt.Println(interest(100000, 0.05, 10))       // Example usage
 }
