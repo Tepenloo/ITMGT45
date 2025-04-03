@@ -6,7 +6,7 @@ import (
 )
 
 // main
-func mains() {
+func main() {
 	// Testing some examples from template
 
 	fmt.Println(shiftLetter("A", 2))                          // "C"

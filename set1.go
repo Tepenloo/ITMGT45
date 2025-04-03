@@ -6,7 +6,7 @@ import (
 )
 
 // main
-func maint() {
+func main() {
 	// Test
 	fmt.Println(savings(10000, 0.12, 2000))
 	fmt.Println(materialWaste(1000, "kg", 4, 100))
